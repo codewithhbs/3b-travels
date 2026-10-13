@@ -4,6 +4,7 @@ import PopularDestinations from "@/components/PopularDestinations";
 import FeatureSlider from "@/components/FeatureSlider";
 import PackageCarousel from "@/components/PackageCarousel";
 import TourCarousel from "@/components/TourCarousel";
+import Testimonials from "@/components/Testimonials";
 import QuerySection from "@/components/QuerySection";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <FeatureSlider />
       <PackageCarousel />
       <TourCarousel />
+      <Testimonials />
       <QuerySection />
     </main>
   );

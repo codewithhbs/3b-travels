@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { footerNav, site } from "@/lib/data";
+import { footerNav, site, socials } from "@/lib/data";
+import { SocialIcon } from "./Icons";
 
 export default function Footer() {
   return (
@@ -12,6 +13,9 @@ export default function Footer() {
         <div className="footer-contact">
           <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
           <a href={`mailto:${site.email}`}>{site.email}</a>
+          <div className="socials">
+            {socials.map((x) => (<a key={x.key} href={x.href} target="_blank" rel="noopener noreferrer" aria-label={x.label}><SocialIcon name={x.key} /></a>))}
+          </div>
         </div>
       </div>
       <p className="footer-copy">© {new Date().getFullYear()} {site.name}. All rights reserved.</p>

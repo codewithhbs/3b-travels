@@ -3,7 +3,8 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import QuerySection from "@/components/QuerySection";
 import { ServiceIcon, ArrowUpRight } from "@/components/Icons";
-import { services } from "@/lib/data";
+import { services, socials } from "@/lib/data";
+import { SocialIcon } from "@/components/Icons";
 
 export const metadata = { title: "About Us" };
 
@@ -51,6 +52,23 @@ export default function About() {
               <span className="pill pill-teal">Plan my trip</span>
               <span className="circle-btn"><ArrowUpRight /></span>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section founder">
+        <div className="container founder-grid">
+          <div className="founder-img"><Image src="/images/kunal-mehra.jpg" alt="Kunal Mehra, founder of 3B Travels, with his Triumph Tiger 900" fill sizes="(max-width: 900px) 100vw, 520px" /></div>
+          <div className="about-copy">
+            <span className="pill pill-teal">Meet the Founder</span>
+            <h2 className="section-title">Kunal Mehra</h2>
+            <p>Explorer, passionate traveller and a thrill-seeker who is always planning his next trip. Kunal began his career in 1999 with Park Royal and went on to work with Grand Hyatt, Hyatt Regency, Imperial Hotel and Radisson Mahipalpur, followed by Kuoni, Sita Travels and LPTI.</p>
+            <p>In 2017, when management changed at LPTI, he chose to become an entrepreneur and started 3B Travels. With two decades in hotels and travel, he now creates lifelong memories for his clients, built on happy experiences and long-lasting trust.</p>
+            <p>Kunal has also managed a resort in Nathua Khan, a village in the foothills of the Panchachuli peaks in Uttarakhand, creating jobs and a culture of hospitality among the locals. He has travelled almost all of India, with Ladakh, Sikkim, Darjeeling, Uttarakhand and the jungles of Madhya Pradesh among his favourites, along with all of South East Asia, the UAE, Bhutan, Sri Lanka and parts of Europe.</p>
+            <p>A yoga enthusiast who believes in gratitude and in making lemonade when life gives you lemons, he wants to share the joy of travel with the world through the services he provides.</p>
+            <div className="founder-links">
+              {socials.map((x) => (<a key={x.key} href={x.href} target="_blank" rel="noopener noreferrer" aria-label={x.label}><SocialIcon name={x.key} /></a>))}
+            </div>
           </div>
         </div>
       </section>
