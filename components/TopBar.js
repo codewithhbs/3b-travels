@@ -7,7 +7,7 @@ export default function TopBar() {
       <div className="topbar-inner">
         <div className="topbar-contact">
           {site.phones.map((p) => (
-            <a key={p.tel} href={`tel:${p.tel}`}><PhoneIcon />{p.label}</a>
+            <a key={p.tel} className="topbar-phone" href={`tel:${p.tel}`}><PhoneIcon />{p.label}</a>
           ))}
           <a className="topbar-mail" href={`mailto:${site.email}`}><MailIcon />{site.email}</a>
         </div>
