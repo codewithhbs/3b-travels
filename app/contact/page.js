@@ -10,7 +10,7 @@ const Ico = ({ d }) => (
 
 export default function Contact() {
   const cards = [
-    { t: "Call us", v: site.phone, href: `tel:${site.phone.replace(/\s/g, "")}`,
+    { t: "Call us", phones: site.phones,
       i: <Ico d={<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />} /> },
     { t: "WhatsApp", v: "Chat with a travel expert", href: `https://wa.me/${site.whatsapp}`,
       i: <Ico d={<><path d="M3 21l1.7-5A8.5 8.5 0 1 1 8 19.3z" /><path d="M9 9.5c0 3 2.5 5.5 5.5 5.5l1-1.5-2-1-1 .8a4 4 0 0 1-1.8-1.8l.8-1-1-2z" /></>} /> },
@@ -29,6 +29,13 @@ export default function Contact() {
         <div className="container contact-grid">
           {cards.map((c) => {
             const Tag = c.href ? "a" : "div";
+            if (c.phones) return (
+              <div key={c.t} className="contact-card">
+                <span className="contact-ico">{c.i}</span>
+                <h3>{c.t}</h3>
+                {c.phones.map((p) => <p key={p.tel}><a href={`tel:${p.tel}`}>{p.label}</a></p>)}
+              </div>
+            );
             return (
               <Tag key={c.t} className="contact-card" {...(c.href ? { href: c.href, target: c.href.startsWith("http") ? "_blank" : undefined, rel: "noreferrer" } : {})}>
                 <span className="contact-ico">{c.i}</span>

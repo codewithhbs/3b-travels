@@ -6,6 +6,8 @@ import "@fontsource/outfit/700.css";
 import "./globals.css";
 import Preloader from "@/components/Preloader";
 import Footer from "@/components/Footer";
+import TopBar from "@/components/TopBar";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export const metadata = {
   title: { default: "3B Travels | Curiously Curated Tours", template: "%s | 3B Travels" },
@@ -20,8 +22,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <Preloader />
+        <TopBar />
         {children}
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ export default function Footer() {
           {footerNav.map((n) => <Link key={n.href} href={n.href}>{n.label}</Link>)}
         </nav>
         <div className="footer-contact">
-          <a href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+          {site.phones.map((p) => <a key={p.tel} href={`tel:${p.tel}`}>{p.label}</a>)}
           <a href={`mailto:${site.email}`}>{site.email}</a>
           <div className="socials">
             {socials.map((x) => (<a key={x.key} href={x.href} target="_blank" rel="noopener noreferrer" aria-label={x.label}><SocialIcon name={x.key} /></a>))}
